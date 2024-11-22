@@ -40,8 +40,8 @@ export default class HolbertonCourse {
     if (typeof newlength !== 'number' || Number.isNaN(newlength)) {
       throw new TypeError('Length must be a number');
     }
-    this._length = newlength
-    }
+    this._length = newlength;
+  }
 
   get students() {
     return this._students;
@@ -50,9 +50,9 @@ export default class HolbertonCourse {
   set students(newStudents) {
     if (!Array.isArray(newStudents)) {
       throw new TypeError('Students must be an array');
-  }
-    if (!newStudents.every(newStudents => typeof newStudents === 'string')) {
-      throw new TypeError('All students must be strings')
+    }
+    if (!newStudents.every((newStudents) => typeof newStudents === 'string')) {
+      throw new TypeError('All students must be strings');
     }
     this._students = newStudents;
     }
