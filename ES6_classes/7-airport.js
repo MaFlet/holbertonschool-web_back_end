@@ -4,17 +4,20 @@ export default class Airport {
       throw new TypeError('Name must be a string');
     }
     if (typeof code !== 'string') {
-        throw new TypeError('Code must be a string');
-  }
+      throw new TypeError('Code must be a string');
+    }
     this._name = name;
     this._code = code;
-}
-get [Symbol.toStringTag]() {
+  }
+
+  get [Symbol.toStringTag]() {
     return this._code;
-}
+  }
+
   get name() {
     return this._name;
   }
+  
   get code() {
     return this._code;
   }
