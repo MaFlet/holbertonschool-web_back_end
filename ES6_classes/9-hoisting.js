@@ -36,11 +36,11 @@ const class2019 = new HolbertonClass(2019, 'San Francisco');
 const class2020 = new HolbertonClass(2020, 'San Francisco');
 
 const listOfStudents = [
-    new StudentHolberton('Guillaume', 'Salva', class2020),
-    new StudentHolberton('John', 'Doe', class2020),
-    new StudentHolberton('Albert', 'Clinton', class2019),
-    new StudentHolberton('Donald', 'Bush', class2019),
-    new StudentHolberton('Jason', 'Sandler', class2019),
+  new StudentHolberton('Guillaume', 'Salva', class2020),
+  new StudentHolberton('John', 'Doe', class2020),
+  new StudentHolberton('Albert', 'Clinton', class2019),
+  new StudentHolberton('Donald', 'Bush', class2019),
+  new StudentHolberton('Jason', 'Sandler', class2019),
 ];
 
 export { listOfStudents };
