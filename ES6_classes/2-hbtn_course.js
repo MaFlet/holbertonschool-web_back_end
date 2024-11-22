@@ -34,11 +34,11 @@ export default class HolbertonCourse {
         get length() {
             return this._length;
         }
-        set length(newLength) {
-            if (typeof newLength !== 'number' || isNaN(newlength)) {
+        set length(newlength) {
+            if (typeof newlength !== 'number' || isNaN(newlength)) {
                 throw new TypeError('Length must be a number');
             }
-            this._length = newLength
+            this._length = newlength
         }
 
         get students() {
