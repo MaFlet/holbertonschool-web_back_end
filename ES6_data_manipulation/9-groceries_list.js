@@ -5,7 +5,7 @@ function groceriesList() {
     ['Pasta', 1],
     ['Rice', 1],
     ['Banana', 5],
-  ])
+  ]);
   return groceriesList;
 }
 export default groceriesList;
