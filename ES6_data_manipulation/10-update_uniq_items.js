@@ -11,7 +11,7 @@ function updateUniqueItems(map) {
       map.set(key, 100);
     }
   });
-    // Returns updated map
+  // Returns updated map
   return map;
 }
 export default updateUniqueItems;
