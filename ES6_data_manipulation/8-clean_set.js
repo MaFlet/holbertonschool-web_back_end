@@ -7,7 +7,7 @@ function cleanSet(set, startString) {
   // Process the set, convert set using Array.from()
   const filteredValues = Array.from(set)
     // Filter strings that start with startString with startsWith()
-    .filter(value => typeof value === 'string' && value.startsWith(startString))
+    .filter((value) => typeof value === 'string' && value.startsWith(startString))
     // map each value to remove startString with slice()
     .map((value) => value.slice(startString.length));
     // join all processed values with '-'
