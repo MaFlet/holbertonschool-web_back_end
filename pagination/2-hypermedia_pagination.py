@@ -60,7 +60,7 @@ class Server:
         start_index = (page - 1) * page_size
         end_index = start_index + page_size
         return (start_index, end_index)
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         Returns a dictionary with pagination information
