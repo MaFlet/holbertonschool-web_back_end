@@ -52,7 +52,8 @@ class Server:
             index = 0
 
         # Assert index is valid
-        assert isinstance(index, int) and index >= 0, "Index must be a non-negative integer"
+        assert isinstance(index, int) and index >= 0, \
+            "Index must be a non-negative integer"
         assert index < len(self.dataset()), "Index out of range"
 
         data = []
