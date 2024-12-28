@@ -4,6 +4,7 @@ Module for helper function that will return
 list for paginaton parameters
 """
 
+
 def index_range(page, page_size):
     """
     Function that will return a tuple size two
