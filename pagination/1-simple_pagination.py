@@ -28,18 +28,18 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """
-            Get items for the specified page
-            """
-            assert isinstance(page, int) and page > 0
-            assert isinstance(page_size, int) and page_size > 0
+        """
+        Get items for the specified page
+        """
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
 
-            dataset = self.dataset()
-            try:
-                 start, end = self.index_range(page, page_size)
-                 return dataset[start:end]
-            except:
-                 return []
+        dataset = self.dataset()
+        try:
+            start, end = self.index_range(page, page_size)
+            return dataset[start:end]
+        except (AssertionError, IndexError):
+            return []
 
     def index_range(self, page: int, page_size: int) -> tuple:
         """
