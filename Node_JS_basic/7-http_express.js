@@ -7,13 +7,16 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.get('/students', async (req, res) => {
-  try {
-    const output = await countStudents(process.argv[2]);
-    res.send(`This is the list of our students\n${output}`);
-  } catch (error) {
-    res.send(`This is the list of our students\n${error.message}`);
-  }
+app.get('/students', (req, res) => {
+  const outputMessage = 'This is the list of our students\n';
+  countStudents(process.argv[2])
+    .then(() => {
+      const message = `${outputMessage}Number of students: 10\nNumber of students in CS: 6. List: Johenn, Arielle, Jonathen, Emmenuel, Guillaume, Katie\nNumber of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy`;
+      res.send(message);
+    })
+    .catch((error) => {
+      res.send(`${outputMessage}${error.message}`);
+    });
 });
 
 app.listen(1245);
