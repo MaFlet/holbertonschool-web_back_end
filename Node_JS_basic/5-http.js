@@ -11,8 +11,8 @@ function processStudents(path) {
         message += 'Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy';
         resolve(message);
       })
-      .catch(() => {
-        reject(new Error('Cannot load the database'));
+      .catch((error) => {
+        reject(error);
       });
   });
 }
@@ -28,7 +28,7 @@ const app = http.createServer((req, res) => {
         res.end(message);
       })
       .catch((error) => {
-        res.end(`This is the list of our students\n'${error.message}`);
+        res.end(`This is the list of our students\n${error.message}`);
       });
   }
 });
