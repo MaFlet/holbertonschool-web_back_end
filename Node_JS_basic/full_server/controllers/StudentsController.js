@@ -13,29 +13,29 @@ class StudentsController {
         });
 
         response.status(200).send(output.join('\n'));
-        })
-          .catch(() => {
-            response.status(500).send('Cannot load the database');
-          });
+      })
+      .catch(() => {
+        response.status(500).send('Cannot load the database');
+      });
+  }
+
+  static getAllStudentsByMajor(request, response) {
+    const { major } = request.params;
+
+    if (major !== 'CS' && major !== 'SWE') {
+      response.status(500).send('Major parameter must be CS or SWE');
+      return;
     }
 
-    static getAllStudentsByMajor(request, response) {
-      const { major } = request.params;
-
-      if (major !== 'CS' && major !== 'SWE') {
-        response.status(500).send('Major parameter must be CS or SWE');
-        return;
-      }
-
-      readDatabase(process.argv[2])
-        .then((fields) => {
-          const students = fields[major] || [];
-          response.status(200).send(`List: ${students.join(', ')}`);
-        })
-        .catch(() => {
-          response.status(500).send('Cannot load the database');
-        });
-    }
+    readDatabase(process.argv[2])
+      .then((fields) => {
+        const students = fields[major] || [];
+        response.status(200).send(`List: ${students.join(', ')}`);
+      })
+      .catch(() => {
+        response.status(500).send('Cannot load the database');
+      });
+  }
 }
 
 module.exports = StudentsController;
