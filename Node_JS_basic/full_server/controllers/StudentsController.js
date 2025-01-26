@@ -1,20 +1,19 @@
 const readDatabase = require('../utils');
 
 class StudentsController {
-    static getAllStudents(request, response) {
-        readDatabase(process.argv[2])
-          .then((fields) => {
-            const output = ['This is the list of our students'];
+  static getAllStudents(request, response) {
+    readDatabase(process.argv[2])
+      .then((fields) => {
+        const output = ['This is the list of our students'];
 
-            const sortedFields = Object.keys(fields).sort((a, b) =>
-              a.localeCompare(b, undefined, { sensitivity: 'base' }));
+        const sortedFields = Object.keys(fields).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
-            sortedFields.forEach((field) => {
-              output.push(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
-            });
+        sortedFields.forEach((field) => {
+          output.push(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+        });
 
-            response.status(200).send(output.join('\n'));
-          })
+        response.status(200).send(output.join('\n'));
+        })
           .catch(() => {
             response.status(500).send('Cannot load the database');
           });
